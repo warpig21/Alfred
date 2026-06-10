@@ -1,5 +1,5 @@
 {
-  "appName": "AppFlowy",
+  "appName": "Alfred",
   "defaultUsername": "Mi",
   "welcomeText": "Bienvenido a @:appName",
   "welcomeTo": "Bienvenido a",
@@ -424,7 +424,7 @@
       "cloudServerTypeTip": "Tenga en cuenta que es posible que se cierre la sesión de su cuenta actual después de cambiar el servidor en la nube.",
       "cloudLocal": "Local",
       "cloudAppFlowy": "Nube @:appName",
-      "cloudAppFlowySelfHost": "@:appName Cloud autohospedado",
+      "cloudAppFlowySelfHost": "AppFlowy Cloud autohospedado",
       "appFlowyCloudUrlCanNotBeEmpty": "La URL de la nube no puede estar vacía",
       "clickToCopy": "Haga clic para copiar",
       "selfHostStart": "Si no tiene un servidor, consulte la",

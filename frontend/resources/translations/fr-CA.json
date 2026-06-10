@@ -1,5 +1,5 @@
 {
-  "appName": "AppFlowy",
+  "appName": "Alfred",
   "defaultUsername": "Moi",
   "welcomeText": "Bienvenue sur @:appName",
   "welcomeTo": "Bienvenue à",
@@ -121,14 +121,14 @@
     "csv": "CSV",
     "copyLink": "Copier le lien",
     "publishToTheWeb": "Publier sur le Web",
-    "publishToTheWebHint": "Créer un site Internet avec AppFlowy",
+    "publishToTheWebHint": "Créer un site Internet avec Alfred",
     "publish": "Partager",
     "unPublish": "Annuler la publication",
     "visitSite": "Visitez le site",
     "exportAsTab": "Exporter en tant que",
     "publishTab": "Partager",
     "shareTab": "Partager",
-    "publishOnAppFlowy": "Partager sur AppFlowy"
+    "publishOnAppFlowy": "Partager sur Alfred"
   },
   "moreAction": {
     "small": "petit",
@@ -335,8 +335,8 @@
       "cloudServerType": "Serveur cloud",
       "cloudServerTypeTip": "Veuillez noter qu'il est possible que votre compte actuel soit déconnecté après avoir changé de serveur cloud.",
       "cloudLocal": "Local",
-      "cloudAppFlowy": "@:appName Cloud Bêta",
-      "cloudAppFlowySelfHost": "@:appName Cloud auto-hébergé",
+      "cloudAppFlowy": "AppFlowy Cloud Bêta",
+      "cloudAppFlowySelfHost": "AppFlowy Cloud auto-hébergé",
       "appFlowyCloudUrlCanNotBeEmpty": "L'URL cloud ne peut pas être vide",
       "clickToCopy": "Cliquez pour copier",
       "selfHostStart": "Si vous n'avez pas de serveur, veuillez vous référer au",
