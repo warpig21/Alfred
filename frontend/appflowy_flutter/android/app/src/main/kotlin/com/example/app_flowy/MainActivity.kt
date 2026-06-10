@@ -1,4 +1,4 @@
-package io.appflowy.appflowy
+package com.warpig21.alfred
 
 import io.flutter.embedding.android.FlutterActivity
 
