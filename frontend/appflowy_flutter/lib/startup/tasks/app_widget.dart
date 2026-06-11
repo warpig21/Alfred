@@ -250,11 +250,15 @@ class _ApplicationWidgetState extends State<ApplicationWidget> {
                       final fontFamily = state.font
                           .orDefault(defaultFontFamily)
                           .fontFamilyName;
+                      // Default UI font for appflowy_ui components is Geist
+                      // (Alfred brand); a user-selected font overrides it.
+                      final uiFontFamily =
+                          fontFamily.isEmpty ? builtInBodyFontFamily : fontFamily;
 
                       return AnimatedAppFlowyTheme(
                         data: brightness == Brightness.light
-                            ? themeBuilder.light(fontFamily: fontFamily)
-                            : themeBuilder.dark(fontFamily: fontFamily),
+                            ? themeBuilder.light(fontFamily: uiFontFamily)
+                            : themeBuilder.dark(fontFamily: uiFontFamily),
                         child: MediaQuery(
                           // use the 1.0 as the textScaleFactor to avoid the text size
                           //  affected by the system setting.
