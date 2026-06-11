@@ -164,12 +164,15 @@ splash `assets/images/appflowy_launch_splash.jpg` vanno sostituiti a mano se ser
 NB: `assets/flowy_icons/` è generato da `resources/flowy_icons/` (rebuild/codegen
 per propagare).
 
-**Logo in-app "con testo" (wordmark) — IN ATTESA:** restano AppFlowy finché non
-arriva il wordmark "Alfred". Servono in SVG (incollabili come testo in chat o
-committati sul branch):
-- `app_logo_with_text_light.svg` / `_dark.svg` → `resources/flowy_icons/40x/...`
-- opz. `ai_chat_logo.svg`, e gli SVG legacy in `assets/images/flowy_logo*.svg`.
-Vedi `assets/brand/README.md`.
+**Logo in-app "con testo" (wordmark) — FATTO ✅:**
+`resources/flowy_icons/40x/app_logo_with_text_{light,dark}.svg` rigenerati =
+mark arancione `#FF5B34` + "Alfred" in **Tex Gyre Heros**, testo convertito in
+**tracciati SVG** (via fontTools, così rende in `flutter_svg`). Testo `#0A0A0A`
+(light) / `#FAFAFA` (dark).
+
+**Residui opzionali (non urgenti):** `ai_chat_logo.svg` (16x) e gli SVG legacy in
+`assets/images/flowy_logo*.svg` mostrano ancora il vecchio mark AppFlowy; lo splash
+`appflowy_launch_splash.jpg` idem. Da sostituire se/quando serve.
 
 ---
 
