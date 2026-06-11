@@ -80,7 +80,6 @@ class MobileAppearance extends BaseAppearance {
 
     return ThemeData(
       useMaterial3: false,
-      fontFamily: fontFamily.isEmpty ? builtInBodyFontFamily : null,
       primaryColor: colorTheme.primary, //primary 100
       primaryColorLight: const Color(0xFFFF8C71), //primary 80
       dividerColor: colorTheme.outline, //caption
