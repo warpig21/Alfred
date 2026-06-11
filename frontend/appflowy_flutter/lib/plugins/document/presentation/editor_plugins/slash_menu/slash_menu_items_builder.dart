@@ -119,6 +119,9 @@ List<SelectionMenuItem> _defaultSlashMenuItems({
     // math equation
     mathEquationSlashMenuItem,
 
+    // whiteboard
+    whiteboardSlashMenuItem,
+
     // code block
     codeBlockSlashMenuItem,
 

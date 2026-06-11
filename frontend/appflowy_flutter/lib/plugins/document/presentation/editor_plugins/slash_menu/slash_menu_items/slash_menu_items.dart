@@ -21,3 +21,4 @@ export 'slash_menu_item_builder.dart';
 export 'sub_page_item.dart';
 export 'todo_list_item.dart';
 export 'toggle_list_item.dart';
+export 'whiteboard_item.dart';

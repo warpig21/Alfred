@@ -372,6 +372,10 @@ Map<String, BlockComponentBuilder> _buildBlockComponentBuilderMap(
       context,
       configuration,
     ),
+    WhiteboardBlockKeys.type: _buildWhiteboardBlockComponentBuilder(
+      context,
+      configuration,
+    ),
     CodeBlockKeys.type: _buildCodeBlockComponentBuilder(
       context,
       configuration,
@@ -874,6 +878,15 @@ MathEquationBlockComponentBuilder _buildMathEquationBlockComponentBuilder(
   BlockComponentConfiguration configuration,
 ) {
   return MathEquationBlockComponentBuilder(
+    configuration: configuration,
+  );
+}
+
+WhiteboardBlockComponentBuilder _buildWhiteboardBlockComponentBuilder(
+  BuildContext context,
+  BlockComponentConfiguration configuration,
+) {
+  return WhiteboardBlockComponentBuilder(
     configuration: configuration,
   );
 }
