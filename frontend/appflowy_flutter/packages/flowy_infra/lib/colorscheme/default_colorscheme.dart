@@ -4,23 +4,23 @@ import 'colorscheme.dart';
 
 class ColorSchemeConstants {
   static const white = Color(0xFFFFFFFF);
-  static const lightHover = Color(0xFFe0f8FF);
-  static const lightSelector = Color(0xFFf2fcFF);
+  static const lightHover = Color(0xFFFFE9E3);
+  static const lightSelector = Color(0xFFFFF4F1);
   static const lightBg1 = Color(0xFFf7f8fc);
   static const lightBg2 = Color(0x0F1F2329);
   static const lightShader1 = Color(0xFF333333);
   static const lightShader3 = Color(0xFF828282);
   static const lightShader5 = Color(0xFFe0e0e0);
   static const lightShader6 = Color(0xFFf2f2f2);
-  static const lightMain1 = Color(0xFF00bcf0);
-  static const lightTint9 = Color(0xFFe1fbFF);
+  static const lightMain1 = Color(0xFFFF5B34);
+  static const lightTint9 = Color(0xFFFFE9E3);
   static const darkShader1 = Color(0xFF131720);
   static const darkShader2 = Color(0xFF1A202C);
   static const darkShader3 = Color(0xFF363D49);
   static const darkShader5 = Color(0xFFBBC3CD);
   static const darkShader6 = Color(0xFFF2F2F2);
-  static const darkMain1 = Color(0xFF00BCF0);
-  static const darkMain2 = Color(0xFF00BCF0);
+  static const darkMain1 = Color(0xFFFF5B34);
+  static const darkMain2 = Color(0xFFFF5B34);
   static const darkInput = Color(0xFF282E3A);
   static const lightBorderColor = Color(0xFFEDEDEE);
   static const darkBorderColor = Color(0xFF3A3F49);
@@ -56,7 +56,7 @@ class DefaultColorScheme extends FlowyColorScheme {
           tint8: const Color(0xFFdeFFf1),
           tint9: ColorSchemeConstants.lightTint9,
           main1: ColorSchemeConstants.lightMain1,
-          main2: const Color(0xFF00b7ea),
+          main2: const Color(0xFFE7451B),
           shadow: const Color.fromRGBO(0, 0, 0, 0.15),
           sidebarBg: ColorSchemeConstants.lightBg1,
           divider: ColorSchemeConstants.lightShader6,
@@ -113,9 +113,9 @@ class DefaultColorScheme extends FlowyColorScheme {
           tint6: const Color(0x4DA4C824),
           tint7: const Color(0x4D23CA2E),
           tint8: const Color(0x4D19CCAC),
-          tint9: const Color(0x4D04A9D7),
+          tint9: const Color(0x4DFF5B34),
           main1: ColorSchemeConstants.darkMain2,
-          main2: const Color(0xFF00B7EA),
+          main2: const Color(0xFFE7451B),
           shadow: const Color(0xFF0F131C),
           sidebarBg: const Color(0xFF232B38),
           divider: ColorSchemeConstants.darkShader3,
