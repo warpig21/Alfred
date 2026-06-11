@@ -73,19 +73,51 @@ nessuna chiave alterata.
 Decisioni utente applicate: sotto-brand → solo AI/Pro rinominati, Cloud invariato;
 testo legale invariato.
 
-### 1.3 Identità visiva — RIMANDATO ⏳ (in attesa utente)
+### 1.3 Identità visiva — COLORI: FATTO ✅ / TIPOGRAFIA: in attesa font ⏳
 
-**Colori / palette** — NON ancora modificati (scelta "Non ora").
-- Accent brand attuale = `#00BCF0` (ciano).
-- Punti centrali: `packages/flowy_infra/lib/colorscheme/default_colorscheme.dart`
-  (`lightMain1` r.15, `darkMain1` r.22, `darkMain2` r.23, `main2` light r.59,
-  `main2` dark ~r.118; tinte chiare `lightHover`/`lightSelector`/`lightTint9`) +
-  `lib/workspace/application/settings/appearance/mobile_appearance.dart` r.10.
-- ⚠️ PROMEMORIA (richiesto dall'utente): aggiornare anche le **~22 istanze
-  hardcoded** `Color(0xFF00BCF0)` sparse in `lib/` (sidebar space icon/shared_widget,
-  date_picker, mobile selection menu, mobile toolbar `_toolbar_theme.dart`).
-- Palette proposte (in attesa di scelta): A — Indigo `#5B5BD6`/`#4F46E5`;
-  B — Teal `#0D9488`/`#0F766E`. (oppure hex forniti dall'utente)
+Fonte di verità = design system **Fitbill** (`fitbill/src/styles.css`, token OKLCH).
+Conversione OKLCH→sRGB con **gamut-fitting CSS Color 4** (riduzione di chroma fino
+al bordo gamut, non troncamento). Brand verificato = **`#FF5B34`** (atteso ~#FF5B34).
+Grigi neutri combaciano con la scala Tailwind v4 (validazione pipeline).
+
+Decisioni utente applicate: tinte selezione → arancio tenue; appflowy_ui → brand +
+semantici Fitbill completi.
+
+**Token applicati (brand + semantici, light/dark):**
+- brand/accent: `#FF5B34` (hover scuro `#E7451B`; in dark hover `#FF8C71`)
+- destructive: `#E40016` (light) / `#FF6568` (dark)
+- warning: `#F9AD26`; success: `#009A46` (light) / `#03A14A` (dark)
+- info: `#006FD8` (light) / `#53A0FF` (dark)
+- tinte selezione/hover legacy → arancio tenue `#FFE9E3`/`#FFF4F1`
+
+**File toccati (colori):**
+- `packages/flowy_infra/lib/colorscheme/default_colorscheme.dart` — accent
+  (`main1`/`main2`/`primary`/`darkMain1`/`darkMain2`) cyan→brand; `red`/`yellow`/
+  `green`→destructive/warning/success; retint `hover`/`selector`/`tint9`. (commit accent + semantici)
+- 14 file in `lib/` — 23 istanze hardcoded `Color(0xFF00BCF0)` + `_primaryColor`
+  mobile + 2 commenti → `#FF5B34` (sidebar, date_picker, selection menu, mobile
+  toolbar, editor plugins, ai_chat banner). ✅ il PROMEMORIA sulle hardcoded è RISOLTO.
+- `packages/appflowy_ui/lib/src/theme/data/appflowy_default/semantic.dart` — token
+  `theme*`/`action`/`skyline`/`textHighlight`/`textSelect` cyan→brand; semantici
+  info/success/warning/error→valori Fitbill (light+dark). `featured`(purple) e
+  neutri NON toccati. Tinte chiare `info` (blue100/200) mantenute (info resta blu).
+
+**⚠️ Caveat appflowy_ui / JSON:** `semantic.dart` è autogenerato da
+`script/*.tokens.json` via `generate_theme.dart`. È stato editato il **dart
+generato** (ciò che compila e gira), NON i JSON sorgente, perché: (a) il generatore
+emette *riferimenti a token* non literal, (b) non è eseguibile/verificabile in
+questo ambiente (manca dart). Se in futuro si rilancia `generate_theme.dart`, il
+brand tornerebbe ciano. Follow-up per renderlo persistente: aggiungere una rampa
+`Brand` orange a `Primitive.Mode 1.tokens.json`, ripuntare i token `theme-*`/
+`Skyline` e i semantici nei JSON, poi rigenerare.
+
+**Temi alternativi** (`dandelion`/`lemonade`/`lavender`) NON toccati: sono temi
+opzionali selezionabili, non il brand di default.
+
+**Tipografia — in attesa (scelta "font dopo"):** heading "Tex Gyre Heros", body
+"Inter", mono "Geist Mono". Flutter richiede `.ttf`/`.otf` (i sorgenti Fitbill sono
+`.woff2`, non utilizzabili). Da fare quando arrivano i font: dichiararli nel
+`pubspec.yaml` del client e collegarli al text-theme di `flowy_infra`.
 
 **Logo / icone** — inventario completato, sorgenti binari a carico dell'utente.
 Path da sostituire:
@@ -127,9 +159,11 @@ Path da sostituire:
   quindi `locale_keys.g.dart` non cambia e la build resta verde senza nuovi simboli.
 
 ## PROSSIMI PASSI
-1. Identità visiva — colori: scegliere palette (A Indigo / B Teal / hex propri),
-   poi applicare a colorscheme + mobile_appearance **e** alle ~22 istanze hardcoded
-   `Color(0xFF00BCF0)` (PROMEMORIA esplicito).
-2. Identità visiva — logo/icone: scegliere approccio (icon_white_label.sh vs
-   flutter_launcher_icons), fornire SVG/PNG sorgente, poi generare e sostituire gli asset.
-3. Build di verifica locale macOS con i comandi sopra.
+1. Tipografia: fornire i font in `.ttf`/`.otf` (Tex Gyre Heros, Inter), dichiararli
+   nel `pubspec.yaml` e collegarli al text-theme di `flowy_infra`.
+2. (Opz.) Rendere persistente il rebrand appflowy_ui aggiornando i JSON token +
+   rigenerando con `generate_theme.dart` (vedi caveat 1.3).
+3. Logo/icone: scegliere approccio (`icon_white_label.sh` vs `flutter_launcher_icons`),
+   fornire SVG/PNG sorgente, poi generare e sostituire gli asset.
+4. Build di verifica locale macOS con i comandi sopra; confronto visivo: brand
+   arancione-corallo su pulsanti primari, link, selezioni, accenti (light + dark).
