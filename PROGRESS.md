@@ -170,9 +170,15 @@ mark arancione `#FF5B34` + "Alfred" in **Tex Gyre Heros**, testo convertito in
 **tracciati SVG** (via fontTools, così rende in `flutter_svg`). Testo `#0A0A0A`
 (light) / `#FAFAFA` (dark).
 
-**Residui opzionali (non urgenti):** `ai_chat_logo.svg` (16x) e gli SVG legacy in
-`assets/images/flowy_logo*.svg` mostrano ancora il vecchio mark AppFlowy; lo splash
-`appflowy_launch_splash.jpg` idem. Da sostituire se/quando serve.
+**ai_chat_logo, logo legacy e splash — FATTO ✅:**
+- `resources/flowy_icons/16x/ai_chat_logo.svg` → mark arancione `#FF5B34`.
+- `assets/images/flowy_logo.svg` → mark arancione; `flowy_logo_with_text.svg` /
+  `flowy_logo_dark_mode.svg` → wordmark Alfred (Tex Gyre Heros, tracciati).
+- `assets/images/appflowy_launch_splash.jpg` → splash sfondo bianco + wordmark
+  Alfred centrato (1696×928, `BoxFit.cover`).
+
+Unico passo rimasto per le icone: lanciare in locale
+`flutter pub get && dart run flutter_launcher_icons` per le icone di sistema.
 
 ---
 
