@@ -114,10 +114,32 @@ brand tornerebbe ciano. Follow-up per renderlo persistente: aggiungere una rampa
 **Temi alternativi** (`dandelion`/`lemonade`/`lavender`) NON toccati: sono temi
 opzionali selezionabili, non il brand di default.
 
-**Tipografia — in attesa (scelta "font dopo"):** heading "Tex Gyre Heros", body
-"Inter", mono "Geist Mono". Flutter richiede `.ttf`/`.otf` (i sorgenti Fitbill sono
-`.woff2`, non utilizzabili). Da fare quando arrivano i font: dichiararli nel
-`pubspec.yaml` del client e collegarli al text-theme di `flowy_infra`.
+**Tipografia — FATTO ✅**
+- Font: **heading = Tex Gyre Heros** (file `.otf` forniti dall'utente, GUST Font
+  License), **body/UI = Geist Sans** (scelta utente al posto di Inter; OFL, scaricato
+  ufficiale da vercel/geist-font). Mono invariato (RobotoMono).
+- File font in `assets/fonts/Geist/` (8 pesi TTF + OFL) e
+  `assets/fonts/TexGyreHeros/` (regular + condensed regular OTF) + `README.md` licenze.
+- `pubspec.yaml`: dichiarate famiglie `Geist`, `Tex Gyre Heros`, `Tex Gyre Heros Cn`.
+- Wiring:
+  - `base_appearance.dart`: costanti `builtInBodyFontFamily='Geist'`,
+    `builtInHeadingFontFamily='Tex Gyre Heros'`; `getTextTheme` splitta
+    heading (display*/title* → Heros) vs body (body* → Geist) quando si usa il
+    default. Font utente selezionato → applicato a tutto (comportamento invariato).
+  - `google_fonts_extension.dart`: Geist/Heros/Heros Cn registrati come built-in
+    (NON scaricati da Google Fonts).
+  - `desktop_appearance.dart` + `mobile_appearance.dart`: `ThemeData.fontFamily`
+    default → Geist; tooltip/callout/caption → Geist.
+  - `app_widget.dart`: anche il tema `appflowy_ui` usa Geist di default.
+- Note: gli heading mantengono i pesi AppFlowy esistenti (w600); Tex Gyre Heros è
+  fornito solo in regular (Fitbill usa w400 per gli heading) → Flutter sintetizza il
+  grassetto. Se preferisci la resa Fitbill esatta (heading w400) è una modifica
+  banale. I componenti `appflowy_ui` usano Geist anche per gli heading (no split).
+
+**Fix colore aggiuntivi (durante la tipografia):** sostituiti residui brand-cyan
+`#00C8FF`/`#00B5FF` (indicatori tab, hover drag, sidebar resizer, hover azioni
+tabella, pulsanti swipe mobile, `primaryColorLight` mobile) → `#FF5B34`. NON toccati
+`builtInSpaceColors` e `SelectOptionColorPB.Blue` (opzioni colore utente).
 
 **Logo / icone** — inventario completato, sorgenti binari a carico dell'utente.
 Path da sostituire:
@@ -141,7 +163,9 @@ Path da sostituire:
 - ✅ Nessun crate Rust / package interno rinominato. Verificato presenza intatta:
   `appflowy_backend` (818 file), `appflowy_editor` (406), `appflowy_board` (13),
   `flowy_infra` (707), `flowy-core` (8), `flowy-user` (210).
-- ✅ Nessun file `.rs`, `Cargo.toml`, `pubspec.yaml` o `*.toml` modificato.
+- ✅ Nessun crate Rust / `Cargo.toml` / `*.toml` / protobuf modificato. (Il
+  `pubspec.yaml` del client è stato modificato SOLO per dichiarare i font del brand —
+  nessuna rinomina di package.)
 - ⚠️ Build di controllo NON eseguibile in questo ambiente: `flutter`/`dart` non
   installati (presenti solo `cargo`/`rustc`). Comandi da lanciare in locale (macOS):
   ```bash
@@ -159,11 +183,13 @@ Path da sostituire:
   quindi `locale_keys.g.dart` non cambia e la build resta verde senza nuovi simboli.
 
 ## PROSSIMI PASSI
-1. Tipografia: fornire i font in `.ttf`/`.otf` (Tex Gyre Heros, Inter), dichiararli
-   nel `pubspec.yaml` e collegarli al text-theme di `flowy_infra`.
+1. Logo/icone: scegliere approccio (`icon_white_label.sh` vs `flutter_launcher_icons`),
+   fornire SVG/PNG sorgente, poi generare e sostituire gli asset.
 2. (Opz.) Rendere persistente il rebrand appflowy_ui aggiornando i JSON token +
    rigenerando con `generate_theme.dart` (vedi caveat 1.3).
-3. Logo/icone: scegliere approccio (`icon_white_label.sh` vs `flutter_launcher_icons`),
-   fornire SVG/PNG sorgente, poi generare e sostituire gli asset.
+3. (Opz. tipografia) Se si vuole la resa Fitbill esatta: heading a peso w400; font
+   Heros bold/italic e Heros Cn se servono pesi aggiuntivi; eventuale Geist Mono al
+   posto di RobotoMono per il codice.
 4. Build di verifica locale macOS con i comandi sopra; confronto visivo: brand
-   arancione-corallo su pulsanti primari, link, selezioni, accenti (light + dark).
+   arancione-corallo su pulsanti primari, link, selezioni, accenti (light + dark) +
+   heading in Tex Gyre Heros, testo in Geist.
