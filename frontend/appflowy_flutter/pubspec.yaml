@@ -261,10 +261,10 @@ dependency_overrides:
 # Provide the source master image at assets/brand/ (see assets/brand/README.md).
 flutter_launcher_icons:
   image_path: "assets/brand/alfred_icon_1024.png"
-  # Android: adaptive icon (foreground = padded logo on transparent bg).
+  # Android: solid brand-orange adaptive icon (transparent foreground over orange).
   android: "ic_launcher"
   min_sdk_android: 21
-  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_background: "#FF5B34"
   adaptive_icon_foreground: "assets/brand/alfred_icon_foreground_1024.png"
   ios: true
   remove_alpha_ios: true

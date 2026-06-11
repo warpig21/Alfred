@@ -4,14 +4,17 @@ Drop the Alfred brand source files here, then generate the platform icons.
 
 ## 1. App launcher icon (all platforms)
 
-Provide:
+Current decision: **solid brand-orange (`#FF5B34`) minimalist icon** (no symbol).
+The master files are already generated here:
 
-- `alfred_icon_1024.png` — 1024×1024, full-bleed app icon (no transparency for iOS).
-- `alfred_icon_foreground_1024.png` — 1024×1024 with **transparent** background,
-  the logo centered with ~25% safe-zone padding (used for the Android adaptive
-  icon foreground).
+- `alfred_icon_1024.png` — 1024×1024 solid `#FF5B34`, full-bleed (the OS applies
+  its own rounding/mask per platform).
+- `alfred_icon_foreground_1024.png` — 1024×1024 fully transparent (Android adaptive
+  foreground; the adaptive background color is `#FF5B34`, so the result is solid orange).
 
-Then generate every platform icon (android mipmaps, iOS/macOS asset catalogs,
+To swap in a real logo later, just replace these two PNGs and re-run the generator.
+
+Generate every platform icon (android mipmaps, iOS/macOS asset catalogs,
 web icons, windows .ico) with:
 
 ```bash
