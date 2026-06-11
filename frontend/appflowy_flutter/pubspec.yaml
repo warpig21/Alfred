@@ -159,6 +159,9 @@ dev_dependencies:
   build_runner: ^2.4.9
   envied_generator: ^1.0.1
   flutter_lints: ^5.0.0
+  # Generates platform launcher icons (android/ios/macos/web/windows) from a
+  # single master image. Run: dart run flutter_launcher_icons
+  flutter_launcher_icons: ^0.14.1
 
   flutter_test:
     sdk: flutter
@@ -253,6 +256,30 @@ dependency_overrides:
       url: https://github.com/LucasXu0/flutter-permission-handler.git
       path: permission_handler
       ref: faef1c9
+
+# Alfred app icon generation (run: dart run flutter_launcher_icons).
+# Provide the source master image at assets/brand/ (see assets/brand/README.md).
+flutter_launcher_icons:
+  image_path: "assets/brand/alfred_icon_1024.png"
+  # Android: adaptive icon (foreground = padded logo on transparent bg).
+  android: "ic_launcher"
+  min_sdk_android: 21
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/brand/alfred_icon_foreground_1024.png"
+  ios: true
+  remove_alpha_ios: true
+  web:
+    generate: true
+    image_path: "assets/brand/alfred_icon_1024.png"
+    background_color: "#FFFFFF"
+    theme_color: "#FF5B34"
+  windows:
+    generate: true
+    image_path: "assets/brand/alfred_icon_1024.png"
+    icon_size: 256
+  macos:
+    generate: true
+    image_path: "assets/brand/alfred_icon_1024.png"
 
 flutter:
   generate: true
