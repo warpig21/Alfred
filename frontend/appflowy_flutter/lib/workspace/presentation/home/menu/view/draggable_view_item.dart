@@ -47,7 +47,7 @@ class DraggableViewItem extends StatefulWidget {
 
 class _DraggableViewItemState extends State<DraggableViewItem> {
   DraggableHoverPosition position = DraggableHoverPosition.none;
-  final hoverColor = const Color(0xFF00C8FF);
+  final hoverColor = const Color(0xFFFF5B34);
 
   @override
   Widget build(BuildContext context) {

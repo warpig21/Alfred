@@ -45,7 +45,7 @@ class MobileNotificationTabBar extends StatelessWidget {
         indicator: const RoundUnderlineTabIndicator(
           width: 28.0,
           borderSide: BorderSide(
-            color: Color(0xFF00C8FF),
+            color: Color(0xFFFF5B34),
             width: 3,
           ),
         ),

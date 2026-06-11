@@ -26,7 +26,7 @@ enum NotificationPaneActionType {
     switch (this) {
       case NotificationPaneActionType.markAsRead:
         return MobileSlideActionButton(
-          backgroundColor: const Color(0xFF00C8FF),
+          backgroundColor: const Color(0xFFFF5B34),
           svg: FlowySvgs.m_notification_action_mark_as_read_s,
           size: 24.0,
           onPressed: (context) {
@@ -49,7 +49,7 @@ enum NotificationPaneActionType {
       // this action is only used in the debug mode.
       case NotificationPaneActionType.unArchive:
         return MobileSlideActionButton(
-          backgroundColor: const Color(0xFF00C8FF),
+          backgroundColor: const Color(0xFFFF5B34),
           svg: FlowySvgs.m_notification_action_mark_as_read_s,
           size: 24.0,
           onPressed: (context) {
