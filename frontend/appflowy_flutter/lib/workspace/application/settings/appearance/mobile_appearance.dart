@@ -82,7 +82,7 @@ class MobileAppearance extends BaseAppearance {
       useMaterial3: false,
       fontFamily: fontFamily.isEmpty ? builtInBodyFontFamily : null,
       primaryColor: colorTheme.primary, //primary 100
-      primaryColorLight: const Color(0xFF57B5F8), //primary 80
+      primaryColorLight: const Color(0xFFFF8C71), //primary 80
       dividerColor: colorTheme.outline, //caption
       hintColor: hintColor,
       disabledColor: colorTheme.outline,
