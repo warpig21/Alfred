@@ -158,9 +158,15 @@ Questo rigenera: android `mipmap-*/ic_launcher*`, iOS/macOS asset catalog, web
 `web/icons/*`, windows `app_icon.ico`. (Linux `linux/packaging/assets/logo.png` e lo
 splash `assets/images/appflowy_launch_splash.jpg` vanno sostituiti a mano se serve.)
 
-**Logo in-app (SVG con wordmark) — IN ATTESA:** il riquadro tinta unita non basta per
-i loghi "con testo". Servono dall'utente, in SVG:
-- `app_logo.svg` (mark) → `resources/flowy_icons/16x|40x/app_logo.svg`
+**Logo in-app mark — FATTO ✅:** `resources/flowy_icons/16x/app_logo.svg` e
+`40x/app_logo.svg` sostituiti con un quadrato arancione `#FF5B34` arrotondato
+(minimalista, coerente con l'icona). Usati da `FlowySvgs.app_logo_s/_xl`.
+NB: `assets/flowy_icons/` è generato da `resources/flowy_icons/` (rebuild/codegen
+per propagare).
+
+**Logo in-app "con testo" (wordmark) — IN ATTESA:** restano AppFlowy finché non
+arriva il wordmark "Alfred". Servono in SVG (incollabili come testo in chat o
+committati sul branch):
 - `app_logo_with_text_light.svg` / `_dark.svg` → `resources/flowy_icons/40x/...`
 - opz. `ai_chat_logo.svg`, e gli SVG legacy in `assets/images/flowy_logo*.svg`.
 Vedi `assets/brand/README.md`.
