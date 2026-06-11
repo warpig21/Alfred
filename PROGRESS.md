@@ -141,21 +141,29 @@ opzionali selezionabili, non il brand di default.
 tabella, pulsanti swipe mobile, `primaryColorLight` mobile) → `#FF5B34`. NON toccati
 `builtInSpaceColors` e `SelectOptionColorPB.Blue` (opzioni colore utente).
 
-**Logo / icone** — inventario completato, sorgenti binari a carico dell'utente.
-Path da sostituire:
-- In-app: `assets/images/flowy_logo.svg`, `flowy_logo_dark_mode.svg`,
-  `flowy_logo_with_text.svg`, splash `assets/images/appflowy_launch_splash.jpg`.
-- macOS: `macos/Runner/Assets.xcassets/AppIcon.appiconset/*.png` (16→1024).
-- iOS: `ios/Runner/Assets.xcassets/AppIcon.appiconset/*.png`.
-- Android: `android/app/src/main/res/mipmap-*/ic_launcher*.png` (+ `mipmap-anydpi-v26/*.xml`,
-  `values/ic_launcher_background.xml`) e `ic_launcher-playstore.png`.
-- Windows: `windows/runner/resources/app_icon.ico`. Linux: `linux/packaging/assets/logo.png`.
-- Web: `web/icons/Icon-*.png`, `web/favicon.png`.
-- Nessuna config `flutter_launcher_icons`/`flutter_native_splash` presente.
-- Due opzioni di generazione (da scegliere): (a) toolkit interno
-  `scripts/white_label/icon_white_label.sh --icon-path <svg>`; (b) aggiungere
-  `flutter_launcher_icons` al `pubspec.yaml`. Config da predisporre dopo conferma
-  approccio e ricezione del logo sorgente.
+**Logo / icone — App icon: PRONTO (da generare in locale) ⏳ / Logo in-app: in attesa wordmark ⏳**
+
+Decisione utente: **app icon = riquadro arancione tinta unita `#FF5B34`, minimalista**
+(nessun simbolo). Master generati e committati:
+- `assets/brand/alfred_icon_1024.png` (solid #FF5B34, full-bleed)
+- `assets/brand/alfred_icon_foreground_1024.png` (trasparente, foreground adattiva)
+
+Config `flutter_launcher_icons` predisposta in `pubspec.yaml` (android adattiva con
+background `#FF5B34`, ios con remove_alpha, macos, web con theme_color `#FF5B34`,
+windows). **Da eseguire in locale** (qui non c'è Flutter/dart):
+```bash
+cd frontend/appflowy_flutter && flutter pub get && dart run flutter_launcher_icons
+```
+Questo rigenera: android `mipmap-*/ic_launcher*`, iOS/macOS asset catalog, web
+`web/icons/*`, windows `app_icon.ico`. (Linux `linux/packaging/assets/logo.png` e lo
+splash `assets/images/appflowy_launch_splash.jpg` vanno sostituiti a mano se serve.)
+
+**Logo in-app (SVG con wordmark) — IN ATTESA:** il riquadro tinta unita non basta per
+i loghi "con testo". Servono dall'utente, in SVG:
+- `app_logo.svg` (mark) → `resources/flowy_icons/16x|40x/app_logo.svg`
+- `app_logo_with_text_light.svg` / `_dark.svg` → `resources/flowy_icons/40x/...`
+- opz. `ai_chat_logo.svg`, e gli SVG legacy in `assets/images/flowy_logo*.svg`.
+Vedi `assets/brand/README.md`.
 
 ---
 
