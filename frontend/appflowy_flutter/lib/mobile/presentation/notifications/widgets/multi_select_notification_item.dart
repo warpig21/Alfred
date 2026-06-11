@@ -49,7 +49,7 @@ class MultiSelectNotificationItem extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 12),
                 decoration: selectedIds.contains(reminder.id)
                     ? ShapeDecoration(
-                        color: const Color(0x1900BCF0),
+                        color: const Color(0x19FF5B34),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),

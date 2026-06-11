@@ -324,7 +324,7 @@ class _ColorsState extends State<_Colors> {
                       side: const BorderSide(
                         width: 1.50,
                         strokeAlign: BorderSide.strokeAlignOutside,
-                        color: Color(0xFF00BCF0),
+                        color: Color(0xFFFF5B34),
                       ),
                       borderRadius: BorderRadius.circular(20),
                     ),

@@ -195,7 +195,7 @@ class _FilePreviewFeedback extends StatelessWidget {
         borderRadius: BorderRadius.circular(6),
         border: Border.all(
           width: 2,
-          color: const Color(0xFF00BCF0),
+          color: const Color(0xFFFF5B34),
         ),
       ),
       child: DecoratedBox(

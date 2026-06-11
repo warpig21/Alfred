@@ -48,7 +48,7 @@ class ChatMessageSelectorBanner extends StatelessWidget {
 
         return Container(
           height: 48,
-          color: const Color(0xFF00BCF0),
+          color: const Color(0xFFFF5B34),
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             children: [

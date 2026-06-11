@@ -262,7 +262,7 @@ class PageCoverBottomSheet extends StatelessWidget {
             clipBehavior: Clip.antiAlias,
             decoration: ShapeDecoration(
               shape: RoundedRectangleBorder(
-                side: const BorderSide(width: 1.50, color: Color(0xFF00BCF0)),
+                side: const BorderSide(width: 1.50, color: Color(0xFFFF5B34)),
                 borderRadius: BorderRadius.circular(6),
               ),
             ),

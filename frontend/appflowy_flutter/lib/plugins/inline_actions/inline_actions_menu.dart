@@ -230,7 +230,7 @@ class InlineActionsMenuStyle {
       : backgroundColor = const Color(0xFF282E3A),
         groupTextColor = const Color(0xFFBBC3CD),
         menuItemTextColor = const Color(0xFFBBC3CD),
-        menuItemSelectedColor = const Color(0xFF00BCF0),
+        menuItemSelectedColor = const Color(0xFFFF5B34),
         menuItemSelectedTextColor = const Color(0xFF131720);
 
   /// The background color of the context menu itself

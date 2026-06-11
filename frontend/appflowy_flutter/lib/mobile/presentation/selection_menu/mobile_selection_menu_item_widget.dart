@@ -107,14 +107,14 @@ class MobileSelectionMenuStyle extends SelectionMenuStyle {
     selectionMenuItemSelectedTextColor: Color.fromARGB(255, 56, 91, 247),
     selectionMenuItemSelectedIconColor: Color.fromARGB(255, 56, 91, 247),
     selectionMenuUnselectedLabelColor: Color(0xFF333333),
-    selectionMenuDividerColor: Color(0xFF00BCF0),
-    selectionMenuLinkBorderColor: Color(0xFF00BCF0),
+    selectionMenuDividerColor: Color(0xFFFF5B34),
+    selectionMenuLinkBorderColor: Color(0xFFFF5B34),
     selectionMenuInvalidLinkColor: Color(0xFFE53935),
-    selectionMenuButtonColor: Color(0xFF00BCF0),
+    selectionMenuButtonColor: Color(0xFFFF5B34),
     selectionMenuButtonTextColor: Color(0xFF333333),
     selectionMenuButtonIconColor: Color(0xFF333333),
-    selectionMenuButtonBorderColor: Color(0xFF00BCF0),
-    selectionMenuTabIndicatorColor: Color(0xFF00BCF0),
+    selectionMenuButtonBorderColor: Color(0xFFFF5B34),
+    selectionMenuTabIndicatorColor: Color(0xFFFF5B34),
   );
 
   static const MobileSelectionMenuStyle dark = MobileSelectionMenuStyle(
@@ -129,10 +129,10 @@ class MobileSelectionMenuStyle extends SelectionMenuStyle {
     selectionMenuDividerColor: Color(0xFF3A3F44),
     selectionMenuLinkBorderColor: Color(0xFF3A3F44),
     selectionMenuInvalidLinkColor: Color(0xFFE53935),
-    selectionMenuButtonColor: Color(0xFF00BCF0),
+    selectionMenuButtonColor: Color(0xFFFF5B34),
     selectionMenuButtonTextColor: Color(0xFFFFFFFF),
     selectionMenuButtonIconColor: Color(0xFFFFFFFF),
-    selectionMenuButtonBorderColor: Color(0xFF00BCF0),
-    selectionMenuTabIndicatorColor: Color(0xFF00BCF0),
+    selectionMenuButtonBorderColor: Color(0xFFFF5B34),
+    selectionMenuTabIndicatorColor: Color(0xFFFF5B34),
   );
 }
