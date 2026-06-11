@@ -82,40 +82,40 @@ abstract class BaseAppearance {
         fontFamily: headingFontFamily,
         fontSize: FontSizes.s32,
         fontColor: fontColor,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w400,
         lineHeight: 42.0,
       ), // h2
       displayMedium: getFontStyle(
         fontFamily: headingFontFamily,
         fontSize: FontSizes.s24,
         fontColor: fontColor,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w400,
         lineHeight: 34.0,
       ), // h3
       displaySmall: getFontStyle(
         fontFamily: headingFontFamily,
         fontSize: FontSizes.s20,
         fontColor: fontColor,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w400,
         lineHeight: 28.0,
       ), // h4
       titleLarge: getFontStyle(
         fontFamily: headingFontFamily,
         fontSize: FontSizes.s18,
         fontColor: fontColor,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w400,
       ), // title
       titleMedium: getFontStyle(
         fontFamily: headingFontFamily,
         fontSize: FontSizes.s16,
         fontColor: fontColor,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w400,
       ), // heading
       titleSmall: getFontStyle(
         fontFamily: headingFontFamily,
         fontSize: FontSizes.s14,
         fontColor: fontColor,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w400,
       ), // subheading
       bodyMedium: getFontStyle(
         fontFamily: bodyFontFamily,
