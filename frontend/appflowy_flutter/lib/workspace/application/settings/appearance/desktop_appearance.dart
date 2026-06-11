@@ -16,6 +16,10 @@ class DesktopAppearance extends BaseAppearance {
 
     fontFamily = fontFamily.isEmpty ? defaultFontFamily : fontFamily;
 
+    // Alfred default body/UI font is Geist (when no custom font is selected).
+    final bodyFontFamily =
+        fontFamily.isEmpty ? builtInBodyFontFamily : fontFamily;
+
     final isLight = brightness == Brightness.light;
     final theme = isLight ? appTheme.lightTheme : appTheme.darkTheme;
 
@@ -52,6 +56,9 @@ class DesktopAppearance extends BaseAppearance {
       visualDensity: VisualDensity.standard,
       useMaterial3: false,
       brightness: brightness,
+      // App-wide default body font (only when bundled built-in default is used;
+      // user-selected Google Fonts are applied via the text theme instead).
+      fontFamily: fontFamily.isEmpty ? builtInBodyFontFamily : null,
       dialogBackgroundColor: theme.surface,
       textTheme: getTextTheme(
         fontFamily: fontFamily,
@@ -69,7 +76,7 @@ class DesktopAppearance extends BaseAppearance {
       iconTheme: IconThemeData(color: theme.icon),
       tooltipTheme: TooltipThemeData(
         textStyle: getFontStyle(
-          fontFamily: fontFamily,
+          fontFamily: bodyFontFamily,
           fontSize: FontSizes.s11,
           fontWeight: FontWeight.w400,
           fontColor: theme.surface,
@@ -133,14 +140,14 @@ class DesktopAppearance extends BaseAppearance {
             fontColor: theme.shader3,
           ),
           callout: getFontStyle(
-            fontFamily: fontFamily,
+            fontFamily: bodyFontFamily,
             fontSize: FontSizes.s11,
             fontColor: theme.shader3,
           ),
           calloutBGColor: theme.hoverBG3,
           tableCellBGColor: theme.surface,
           caption: getFontStyle(
-            fontFamily: fontFamily,
+            fontFamily: bodyFontFamily,
             fontSize: FontSizes.s11,
             fontWeight: FontWeight.w400,
             fontColor: theme.hint,

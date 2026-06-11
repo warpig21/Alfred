@@ -5,6 +5,10 @@ import 'package:google_fonts/google_fonts.dart';
 const _defaultFontFamilies = [
   defaultFontFamily,
   builtInCodeFontFamily,
+  // Alfred brand fonts bundled in pubspec (not fetched from Google Fonts).
+  builtInBodyFontFamily,
+  builtInHeadingFontFamily,
+  builtInHeadingCondensedFontFamily,
 ];
 
 // if the font family is not available, google fonts packages will throw an exception

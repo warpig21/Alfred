@@ -22,8 +22,12 @@ class MobileAppearance extends BaseAppearance {
   ) {
     assert(codeFontFamily.isNotEmpty);
 
+    // Alfred default body/UI font is Geist (when no custom font is selected).
+    final bodyFontFamily =
+        fontFamily.isEmpty ? builtInBodyFontFamily : fontFamily;
+
     final fontStyle = getFontStyle(
-      fontFamily: fontFamily,
+      fontFamily: bodyFontFamily,
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
     );
@@ -76,6 +80,7 @@ class MobileAppearance extends BaseAppearance {
 
     return ThemeData(
       useMaterial3: false,
+      fontFamily: fontFamily.isEmpty ? builtInBodyFontFamily : null,
       primaryColor: colorTheme.primary, //primary 100
       primaryColorLight: const Color(0xFF57B5F8), //primary 80
       dividerColor: colorTheme.outline, //caption

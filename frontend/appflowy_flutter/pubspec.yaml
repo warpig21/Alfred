@@ -284,6 +284,38 @@ flutter:
         - asset: assets/google_fonts/Roboto_Mono/RobotoMono-Regular.ttf
         - asset: assets/google_fonts/Roboto_Mono/RobotoMono-Italic.ttf
           style: italic
+    # Alfred brand typography (Fitbill design system)
+    # Body/UI font: Geist Sans (OFL). Heading font: Tex Gyre Heros (GUST Font License).
+    - family: Geist
+      fonts:
+        - asset: assets/fonts/Geist/Geist-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Geist/Geist-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/Geist/Geist-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Geist/Geist-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Geist/Geist-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Geist/Geist-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/Geist/Geist-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Geist/Geist-BoldItalic.ttf
+          weight: 700
+          style: italic
+    - family: Tex Gyre Heros
+      fonts:
+        - asset: assets/fonts/TexGyreHeros/TexGyreHeros-Regular.otf
+          weight: 400
+    - family: Tex Gyre Heros Cn
+      fonts:
+        - asset: assets/fonts/TexGyreHeros/TexGyreHerosCn-Regular.otf
+          weight: 400
     # White-label font configuration will be added here
     # BEGIN: WHITE_LABEL_FONT
     # END: WHITE_LABEL_FONT

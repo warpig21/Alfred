@@ -12,6 +12,13 @@ const defaultFontFamily = '';
 
 const builtInCodeFontFamily = 'RobotoMono';
 
+// Alfred brand typography (Fitbill design system).
+// Body/UI font: Geist Sans. Heading font: Tex Gyre Heros.
+// Both are bundled in pubspec.yaml and used as the default typography.
+const builtInBodyFontFamily = 'Geist';
+const builtInHeadingFontFamily = 'Tex Gyre Heros';
+const builtInHeadingCondensedFontFamily = 'Tex Gyre Heros Cn';
+
 abstract class BaseAppearance {
   final white = const Color(0xFFFFFFFF);
 
@@ -64,52 +71,58 @@ abstract class BaseAppearance {
     required String fontFamily,
     required Color fontColor,
   }) {
+    // Alfred typography: when no custom font is selected (default), headings use
+    // Tex Gyre Heros and body text uses Geist. A user-selected font applies to all.
+    final headingFontFamily =
+        fontFamily.isEmpty ? builtInHeadingFontFamily : fontFamily;
+    final bodyFontFamily =
+        fontFamily.isEmpty ? builtInBodyFontFamily : fontFamily;
     return TextTheme(
       displayLarge: getFontStyle(
-        fontFamily: fontFamily,
+        fontFamily: headingFontFamily,
         fontSize: FontSizes.s32,
         fontColor: fontColor,
         fontWeight: FontWeight.w600,
         lineHeight: 42.0,
       ), // h2
       displayMedium: getFontStyle(
-        fontFamily: fontFamily,
+        fontFamily: headingFontFamily,
         fontSize: FontSizes.s24,
         fontColor: fontColor,
         fontWeight: FontWeight.w600,
         lineHeight: 34.0,
       ), // h3
       displaySmall: getFontStyle(
-        fontFamily: fontFamily,
+        fontFamily: headingFontFamily,
         fontSize: FontSizes.s20,
         fontColor: fontColor,
         fontWeight: FontWeight.w600,
         lineHeight: 28.0,
       ), // h4
       titleLarge: getFontStyle(
-        fontFamily: fontFamily,
+        fontFamily: headingFontFamily,
         fontSize: FontSizes.s18,
         fontColor: fontColor,
         fontWeight: FontWeight.w600,
       ), // title
       titleMedium: getFontStyle(
-        fontFamily: fontFamily,
+        fontFamily: headingFontFamily,
         fontSize: FontSizes.s16,
         fontColor: fontColor,
         fontWeight: FontWeight.w600,
       ), // heading
       titleSmall: getFontStyle(
-        fontFamily: fontFamily,
+        fontFamily: headingFontFamily,
         fontSize: FontSizes.s14,
         fontColor: fontColor,
         fontWeight: FontWeight.w600,
       ), // subheading
       bodyMedium: getFontStyle(
-        fontFamily: fontFamily,
+        fontFamily: bodyFontFamily,
         fontColor: fontColor,
       ), // body-regular
       bodySmall: getFontStyle(
-        fontFamily: fontFamily,
+        fontFamily: bodyFontFamily,
         fontColor: fontColor,
         fontWeight: FontWeight.w400,
       ), // body-thin
